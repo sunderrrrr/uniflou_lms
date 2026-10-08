@@ -1,0 +1,31 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.text {
+  margin: 0;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.hint {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.error {
+  margin: 0;
+  color: var(--error);
+  font-size: 14px;
+}

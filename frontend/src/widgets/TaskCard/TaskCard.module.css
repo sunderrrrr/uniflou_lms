@@ -1,0 +1,11 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sub {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}

@@ -1,0 +1,20 @@
+.toast {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  font-size: 14px;
+}
+
+.error {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.success {
+  border-color: var(--success);
+}
+
+.info {
+  color: var(--ink-soft);
+}

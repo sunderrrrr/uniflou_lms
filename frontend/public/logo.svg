@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="#$#">
+  <rect width="120" height="120" fill="#121212"/>
+  <circle cx="58" cy="52" r="46" fill="#d8ff45"/>
+  <circle cx="48" cy="42" r="30" fill="#ffffff"/>
+  <polygon points="60,18 68,38 52,38" fill="#6ed9ff"/>
+  <polygon points="60,38 72,58 48,58" fill="#f87171"/>
+  <polygon points="60,58 76,102 44,62" fill="#e63946"/>
+</svg>

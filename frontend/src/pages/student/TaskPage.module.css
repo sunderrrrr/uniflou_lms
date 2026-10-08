@@ -1,0 +1,45 @@
+.page {
+  max-width: 720px;
+}
+
+.question {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.option {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.timer {
+  font-family: var(--font-display);
+  margin-bottom: 12px;
+}
+
+.ok {
+  border-color: var(--success);
+}
+
+.bad {
+  border-color: var(--error);
+}

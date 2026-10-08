@@ -1,0 +1,28 @@
+.wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.ring {
+  transition: stroke-dashoffset 1.2s ease-out;
+}
+
+.center {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.center strong {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 700;
+}
+
+.center span {
+  font-size: 13px;
+  color: var(--ink-faint);
+}

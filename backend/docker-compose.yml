@@ -1,0 +1,72 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: uniflou
+      POSTGRES_USER: uniflou
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U uniflou -d uniflou"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # One-shot сервис: применяет миграции и завершается.
+  migrate:
+    image: migrate/migrate:v4.17.1
+    volumes:
+      - ./migrations:/migrations:ro
+    command:
+      - "-path=/migrations"
+      - "-database=postgres://uniflou:${DB_PASSWORD}@postgres:5432/uniflou?sslmode=disable"
+      - "up"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: on-failure
+
+  backend:
+    build: .
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: uniflou
+      DB_USER: uniflou
+      DB_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      LLM_API_KEY: ${LLM_API_KEY}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
+      APP_URL: ${APP_URL:-http://localhost:3000}
+      GIN_MODE: release
+      CORS_ORIGINS: http://localhost:3000,http://localhost:5173
+      ADMIN_BOOTSTRAP_ENABLED: ${ADMIN_BOOTSTRAP_ENABLED:-false}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  frontend:
+    build: ../frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  pgdata:

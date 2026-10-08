@@ -1,0 +1,31 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 23, 23, 0.45);
+  display: grid;
+  place-items: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.panel {
+  width: min(480px, 100%);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  padding: 20px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.close {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}

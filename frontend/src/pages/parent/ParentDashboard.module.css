@@ -1,0 +1,43 @@
+.lead {
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.summary {
+  margin-top: 12px;
+  color: var(--ink-soft);
+}
+
+.linkCard {
+  margin-bottom: 16px;
+}
+
+.linkRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .linkRow {
+    grid-template-columns: 1fr;
+  }
+}

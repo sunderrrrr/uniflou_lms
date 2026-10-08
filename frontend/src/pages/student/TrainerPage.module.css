@@ -1,0 +1,139 @@
+.lead {
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+
+.lead span {
+  color: var(--accent);
+  padding: 0 6px;
+}
+
+.page {
+  max-width: 880px;
+}
+
+.controls {
+  display: grid;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.modes {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  flex-wrap: wrap;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  gap: 3px;
+}
+
+.modes button {
+  min-height: 38px;
+  padding: 7px 12px;
+  color: var(--ink-soft);
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.modes .modeActive {
+  color: var(--ink);
+  background: var(--accent);
+  font-weight: 600;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  max-width: 440px;
+  font-weight: 600;
+}
+
+.field select {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+
+.numberField {
+  padding: 0;
+  border: 0;
+}
+
+.numberField legend {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.number,
+.activeNumber {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 4px;
+  width: 84px;
+  min-height: 72px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.number strong,
+.activeNumber strong {
+  font-size: 20px;
+}
+
+.number small,
+.activeNumber small {
+  color: var(--ink-soft);
+  font-size: 11px;
+}
+
+.activeNumber {
+  border-color: var(--accent);
+  box-shadow: inset 0 -3px 0 var(--accent);
+}
+
+.hint {
+  color: var(--ink-soft);
+}
+
+.startRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.startRow span {
+  color: var(--ink-soft);
+}
+
+@media (max-width: 768px) {
+  .controls {
+    gap: 20px;
+  }
+
+  .number,
+  .activeNumber {
+    width: 72px;
+  }
+}

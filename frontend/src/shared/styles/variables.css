@@ -1,0 +1,27 @@
+:root {
+  --bg: #faf8f5;
+  --bg-card: #ffffff;
+  --ink: #171717;
+  --ink-soft: rgba(23, 23, 23, 0.62);
+  --ink-faint: rgba(23, 23, 23, 0.4);
+  --accent: https: ; //img.kleinanzeigen.de/api/v1/prod-ads/images/e7/e713c9e5-85ec-48f8-86cf-aeaaa46425ce?rule=$_59.AUTO;
+  --accent-ink: #171717;
+  --accent2: #6ed9ff;
+  --dark: #121212;
+  --dark-card: #1b1b1b;
+  --dark-ink: #f4f2ed;
+  --dark-ink-soft: rgba(244, 242, 237, 0.62);
+  --line: rgba(23, 23, 23, 0.1);
+  --line-dark: rgba(244, 242, 237, 0.12);
+  --success: #4ade80;
+  --error: #f87171;
+  --warning: #fbbf24;
+  --radius: 22px;
+  --radius-sm: 14px;
+  --radius-pill: 100px;
+  --ease: cubic-bezier(0.16, 0.8, 0.24, 1);
+  --container: 1120px;
+  --font-display: "Unbounded", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-accent: "Caveat", cursive;
+}

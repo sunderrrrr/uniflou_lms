@@ -1,0 +1,21 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 22px;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.even {
+  border-radius: 24px 10px 22px 12px;
+  transform: rotate(-0.4deg);
+}
+
+.odd {
+  border-radius: 10px 24px 12px 22px;
+  transform: rotate(0.5deg);
+}
+
+.card:hover {
+  transform: translateY(-4px) rotate(0deg);
+  box-shadow: 0 16px 48px -20px rgba(23, 23, 23, 0.15);
+}
